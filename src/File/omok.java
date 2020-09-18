@@ -130,7 +130,7 @@ public class omok {
 				}
 			}
 		}
-
+		//입력닫기
 		scan.close();
 	}
 
