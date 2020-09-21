@@ -77,6 +77,7 @@ class ScoreMng {
 public class day0921_메서드omr암기 {
 	public static void main(String[] args) {
 
+		
 		ScoreMng sm = new ScoreMng();
 		sm.run();
 		sm.makeAnswer();

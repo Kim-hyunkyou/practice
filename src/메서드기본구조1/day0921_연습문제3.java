@@ -29,7 +29,7 @@ class TestM3 {
 		System.out.println("total = " + total);
 		System.out.println("avg = " + avg);
 	}
-
+ 
 	void printPassStudents(int scores[]) {
 		int passCnt = 0;
 		for (int i = 0; i < scores.length; i++) {
