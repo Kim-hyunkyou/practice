@@ -1,5 +1,7 @@
 package 메서드기본구조1;
 
+//2020-09-21
+//
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
