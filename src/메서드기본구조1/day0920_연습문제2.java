@@ -31,7 +31,7 @@ class Test_2 {
 				cnt++;
 			}
 		}
-		System.out.println("4의 배수의 총 갯수 = " + cnt + "개");
+		System.out.println("4의  배수의 총 갯수 = " + cnt + "개");
 	}
 
 	void printCountMultiple2(int[] arr) {
