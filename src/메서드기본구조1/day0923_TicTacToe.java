@@ -1,6 +1,5 @@
 package 메서드기본구조1;
 
-import java.util.Random;
 import java.util.Scanner;
 
 //# 틱택토
