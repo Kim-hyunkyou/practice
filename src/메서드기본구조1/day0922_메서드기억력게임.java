@@ -26,8 +26,7 @@ class MemoryGame {
 	void shuffle() {
 		for (int i = 0; i < 1000; i++) {
 			int r = ran.nextInt(front.length);
-			int temp;
-			temp = front[0];
+			int temp = front[0];
 			front[0] = front[r];
 			front[r] = temp;
 		}

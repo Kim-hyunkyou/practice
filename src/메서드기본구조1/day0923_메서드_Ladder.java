@@ -1,6 +1,7 @@
 package 메서드기본구조1;
 
-import java.util.Random;
+//2020-09-24
+//16:10~16:18 9분"
 import java.util.Scanner;
 
 //# 사다리 게임
@@ -10,7 +11,7 @@ class LadderGame {
 	Scanner scan = new Scanner(System.in);
 
 	int[][] ladder = { { 0, 0, 0, 0, 0 }, { 1, 2, 0, 1, 2 }, { 0, 1, 2, 0, 0 }, { 0, 0, 0, 1, 2 }, { 0, 1, 2, 0, 0 },
-			{ 1, 2, 0, 0, 0 }, { 0, 0, 0, 1, 2 }, { 0, 0, 0, 0, 0 } };
+			{ 1, 2, 1, 2, 0 }, { 0, 0, 0, 1, 2 }, { 0, 0, 0, 0, 0 } };
 
 	int xIdx = 0;
 	int yIdx = 0;
@@ -19,7 +20,7 @@ class LadderGame {
 
 	// 사다리 출력하기
 	void showLadder() {
-		System.out.println("  1  2  3  4  5");
+		System.out.println(" 1  2  3  4  5");
 		for (int i = 0; i < ladder.length; i++) {
 			for (int j = 0; j < ladder[i].length; j++) {
 				if (ladder[i][j] == 0) {
@@ -44,15 +45,14 @@ class LadderGame {
 			}
 			System.out.println();
 		}
-		System.out.println("김밥 우유 치킨 따아 피자");
+		System.out.println("아아 뜨아 김밥 라면 떡볶이");
 		System.out.println();
 
 		try {
-			Thread.sleep(500);//0.5 초씩 멈춤..사다리 변화과정을 천천히 보여주기 위해
+			Thread.sleep(500);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	// 사다리 이동하기
@@ -60,19 +60,17 @@ class LadderGame {
 		showLadder();
 		while (true) {
 			if (ladder[xIdx][yIdx] == 0) {
-				xIdx += 1;
+				xIdx++;
 				showLadder();
-
 			} else if (ladder[xIdx][yIdx] == 1) {
-				yIdx += 1;
+				yIdx++;
 				showLadder();
-				xIdx += 1;
+				xIdx++;
 				showLadder();
 			} else if (ladder[xIdx][yIdx] == 2) {
-
-				yIdx -= 1;
+				yIdx--;
 				showLadder();
-				xIdx += 1;
+				xIdx++;
 				showLadder();
 			}
 			// 종료하기
@@ -85,34 +83,31 @@ class LadderGame {
 	// 메뉴 설정하기
 	void setMenu() {
 		if (yIdx == 0) {
-			menu = "김밥";
+			menu = "아아";
 		} else if (yIdx == 1) {
-			menu = "우유";
+			menu = "뜨아";
 		} else if (yIdx == 2) {
-			menu = "치킨";
+			menu = "김밥";
 		} else if (yIdx == 3) {
-			menu = "따아";
+			menu = "라면";
 		} else if (yIdx == 4) {
-			menu = "피자";
+			menu = "떡볶이";
 		}
 	}
 
 	void run() {
-
 		showLadder();
-
 		xIdx = 0;
 		yIdx = 0;
-
 		// 사다리 선택하기
-		System.out.print("번호를 선택하세요(1~5) : ");
-		yIdx = scan.nextInt() - 1;
-
+		System.out.print("번호를 선택하세요.[1~5]");
+		yIdx = scan.nextInt()-1;
+		
 		// 사다리 이동하기
 		moveLadder();
-
+		
 		setMenu();
-		System.out.println("오늘의 점심 메뉴는 " + menu + " 입니다~!!!");
+		System.out.println("오늘의 메뉴는 "+menu+" 입니다.");
 
 	}
 
